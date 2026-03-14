@@ -1,20 +1,29 @@
 import 'package:flutter/material.dart';
-import 'pages/main_page.dart';
+import 'pages/home_page.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
 
-  const MyApp({super.key});
-
   @override
   Widget build(BuildContext context) {
 
-    return const MaterialApp(
+    return MaterialApp(
+
       debugShowCheckedModeBanner: false,
-      home: MainPage(),
+
+      title: "Kütüphane",
+
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+
+      home: HomePage(),
+
     );
+
   }
+
 }

@@ -1,6 +1,7 @@
 class KitapTur {
-  final int id;
-  final String ad;
+
+  int id;
+  String ad;
 
   KitapTur({
     required this.id,
@@ -8,9 +9,11 @@ class KitapTur {
   });
 
   factory KitapTur.fromJson(Map<String, dynamic> json) {
+
     return KitapTur(
       id: json["id"],
       ad: json["ad"],
     );
   }
+
 }

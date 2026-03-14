@@ -1,14 +1,13 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import '../models/kitap_tur_model.dart';
+import '../constants/api.dart';
+import '../models/kitap_tur.dart';
 
 class KitapTurService {
 
-  static const String baseUrl = "http://localhost:5022/api/KitapTur";
-
   Future<List<KitapTur>> getTurler() async {
 
-    final response = await http.get(Uri.parse(baseUrl));
+    final response = await http.get(Uri.parse("${ApiConstants.baseUrl}/KitapTur"));
 
     if (response.statusCode == 200) {
 
@@ -23,7 +22,7 @@ class KitapTurService {
   Future<void> turEkle(String ad) async {
 
     await http.post(
-      Uri.parse(baseUrl),
+      Uri.parse("${ApiConstants.baseUrl}/KitapTur"),
       headers: {"Content-Type": "application/json"},
       body: jsonEncode({"ad": ad}),
     );
@@ -32,7 +31,7 @@ class KitapTurService {
   Future<void> turGuncelle(int id, String ad) async {
 
     await http.put(
-      Uri.parse("$baseUrl/$id"),
+      Uri.parse("${ApiConstants.baseUrl}/KitapTur/$id"),
       headers: {"Content-Type": "application/json"},
       body: jsonEncode({
         "id": id,
@@ -43,6 +42,6 @@ class KitapTurService {
 
   Future<void> turSil(int id) async {
 
-    await http.delete(Uri.parse("$baseUrl/$id"));
+    await http.delete(Uri.parse("${ApiConstants.baseUrl}/KitapTur/$id"));
   }
 }
