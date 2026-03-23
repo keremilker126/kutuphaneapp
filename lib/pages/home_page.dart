@@ -7,6 +7,7 @@ import 'yayin_evi_page.dart';
 import 'kitap_tur_page.dart';
 import 'odunc_page.dart';
 import 'ceza_page.dart';
+import 'sinif_page.dart'; // <-- YENİ
 
 class HomePage extends StatelessWidget {
 
@@ -94,6 +95,7 @@ class HomePage extends StatelessWidget {
             menuCard(context,"Yazarlar",Icons.edit, YazarPage()),
             menuCard(context,"Yayın Evleri",Icons.business, YayinEviPage()),
             menuCard(context,"Kitap Türleri",Icons.category, KitapTurPage()),
+            menuCard(context,"Sınıflar",Icons.school, SinifPage()), // <-- YENİ BUTON
             menuCard(context,"Ödünçler",Icons.swap_horiz, OduncPage()),
             menuCard(context,"Cezalar",Icons.warning, CezaPage()),
 
